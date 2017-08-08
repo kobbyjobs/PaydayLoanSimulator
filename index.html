@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CashLoan Simulator</title>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- MUST have for Jquery UI and slider --> 
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include jQuery Mobile stylesheets -->
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+<!-- Include the jQuery Mobile library -->
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <!-- Cash capture fields-->
+<div class="container-fluid marginator">
+  <div class="row">
+    <!-- How much cash -->
+    <div class="col-md-9 col-xs-9">
+      How much <em>cash</em> do you want?
+    </div>
+    <!-- Cash field -->
+    <div class="col-md-3 col-xs-3">
+      <input type="text" maxlength="128" class="form-control amount" data-bind="value:currentAmount" id="currentAmountVal">
+    </div>
+  </div>
+  <div class="row padme">
+    <div class="col-xs-12">
+    </div>
+  </div>
+  <!-- Cash slide and select -->
+  <div class="row">
+    <!-- Reduce (-) -->
+    <div class="col-xs-1">
+      <a href="#" id="reduceAmount" data-bind="click: reduceAmountVal" class="btn btn-default">
+        <span class="glyphicon glyphicon-minus"></span>
+      </a>
+    </div>
+    <!-- Cash slider -->
+    <div class="col-xs-10">
+      <input type="range" name="amount-slider" id="amount-slider" min="50" max="400" data-bind="value: currentAmount, slider: currentAmount" data-highlight="true">
+    </div>
+    <!-- Increase (+) -->
+    <div class="col-xs-1">
+      <a href="#" id="increaseAmount" data-bind="click: increaseAmountVal" class="btn btn-default">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+    </div>
+    
+  </div>
+  <div class="row padme">
+    <div class="col-xs-12">
+    </div>
+  </div>
+  <!-- Period capture fields-->
+  <div class="row">
+    <!-- How many days -->
+    <div class="col-md-5 col-xs-5">
+      How <em>long</em> do you want it for?
+    </div>
+    <!-- to date label -->
+    <div class="col-md-4 col-xs-4" data-bind="html:tillDate">
+    </div>
+    <!-- Days field -->
+    <div class="col-md-3 col-xs-3">
+      <input type="text" maxlength="128" class="form-control period" data-bind="value:currentPeriod">
+    </div>
+  </div>
+  <div class="row padme">
+    <div class="col-xs-12">
+    </div>
+  </div>
+  <!-- Period slide and select -->
+  <div class="row">
+    <!-- Reduce (-) -->
+    <div class="col-xs-1">
+      <a href="#" class="btn btn-default" id="reducePeriod" data-bind="click: reducePeriodVal">
+        <span class="glyphicon glyphicon-minus"></span>
+      </a>
+
+    </div>
+    <!-- Period slider -->
+    <div class="col-xs-10">
+      <input type="range" name="period-slider" id="period-slider" min="1" max="35" data-bind="value: currentPeriod, slider: currentPeriod" data-highlight="true">
+    </div>
+    <!-- Increase (+) -->
+    <div class="col-xs-1">
+      <a href="#" class="btn btn-default" id="increasePeriod" data-bind="click: increasePeriodVal">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+    </div>    
+  </div>
+  <div class="row padme">
+    <div class="col-xs-12">
+    </div>
+  </div>
+  <!-- Calcs and apply -->
+  <div class="row">
+    <!-- Borrowing -->
+    <div class="col-xs-2" data-bind="html:summaryBorrowed">
+    </div>
+    <!-- + -->
+    <div class="col-xs-1">
+      +
+    </div>
+    <!-- Interest -->
+    <div class="col-xs-2" data-bind="html:interestRepaid">
+    </div>
+    <!-- = -->
+    <div class="col-xs-1">
+      =
+    </div>
+    <!-- Total to replay -->
+    <div class="col-xs-2" data-bind="html:totalRepaid">
+    </div>
+    <!-- Apply now! -->
+    <div class="col-xs-4">
+      <button id="applyBtn" class="btn btn-warning" style="background-color:orange;color:white">Apply now</button>
+    </div>
+  </div>
+
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+.input-group, .input-group-addon {
+  background-color: white;
+  border-style: none;
+}
+
+em {
+  color: blue;
+}
+
+/* https://stackoverflow.com/questions/8912660/hiding-the-slider-input-box-in-jquery */
+
+.ui-slider-input {
+  display: none !important;
+}
+
+.marginator {
+  margin: 5% 5% 5% 5%;
+}
+
+.padme {
+  padding: 2% 0% 2% 0%;
+}
