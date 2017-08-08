@@ -117,26 +117,26 @@ function AppViewModel() {
   }, this);
 
   this.reducePeriodVal = function() {
-    if (this.currentPeriod() > 1) {
-      this.currentPeriod(this.currentPeriod() - 1);
+    if (parseInt(this.currentPeriod()) > 1) {
+      this.currentPeriod(parseInt(this.currentPeriod()) - 1);
     }
   };
 
   this.increasePeriodVal = function() {
-    if (this.currentPeriod() < 35) {
-      this.currentPeriod(this.currentPeriod() + 1);
+    if (parseInt(this.currentPeriod()) < 35) {
+      this.currentPeriod(parseInt(this.currentPeriod()) + 1);
     }
   };
 
   this.reduceAmountVal = function() {
-    if (this.currentAmount() > 50) {
-      this.currentAmount(this.currentAmount() - 1);
+    if (parseInt(this.currentAmount()) > 50) {
+      this.currentAmount(parseInt(this.currentAmount()) - 1);
     }
   };
 
   this.increaseAmountVal = function() {
-    if (this.currentAmount() < 400) {
-      this.currentAmount(this.currentAmount() + 1);
+    if (parseInt(this.currentAmount()) < 400) {
+      this.currentAmount(parseInt(this.currentAmount()) + 1);
     }
   };
 }
